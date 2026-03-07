@@ -1257,3 +1257,214 @@ body {
   .choose-float-image {position: relative; width: 88%; right: auto; left: 12%; bottom: 0; margin-top: -46px; height: 235px;}
   .experience-badge {left: 1rem; bottom: 78px;}
 }
+
+/* Dealer hero section above customer service */
+.hero-dealer-section {
+  margin-bottom: 2.5rem;
+}
+
+.hero-dealer-bg {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 760px;
+}
+
+.hero-dealer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-dealer-content {
+  position: relative;
+  z-index: 2;
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 6.5rem;
+}
+
+.dealer-panel-left {
+  background: var(--accent);
+  color: #fff;
+  padding: 2.6rem;
+}
+
+.dealer-panel-left h2,
+.dealer-panel-right h3 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.dealer-panel-left h2 {
+  font-size: clamp(1.6rem, 1.1vw + 1rem, 2.4rem);
+  margin-bottom: 0.9rem;
+}
+
+.dealer-panel-left p {
+  margin: 0;
+  line-height: 1.35;
+  font-size: clamp(1rem, 0.35vw + 0.9rem, 1.3rem);
+}
+
+.dealer-panel-right {
+  border: 4px solid var(--accent);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.dealer-panel-top {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  border-bottom: 3px solid var(--accent);
+}
+
+.sell-box {
+  border-right: 3px solid var(--accent);
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.sell-label {
+  display: inline-block;
+  background: #fff;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+
+.sell-icon {
+  display: block;
+  font-size: 2.1rem;
+  margin-top: 0.3rem;
+}
+
+.dealer-panel-right h3 {
+  margin: 0;
+  color: var(--accent);
+  padding: 1.25rem;
+  font-size: clamp(1.4rem, 1vw + 0.9rem, 2.2rem);
+}
+
+.dealer-panel-body {
+  padding: 1.35rem;
+}
+
+.dealer-panel-body p {
+  margin: 0;
+  font-size: clamp(1rem, 0.3vw + 0.9rem, 1.3rem);
+  line-height: 1.34;
+}
+
+.dealer-dots {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.dealer-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.6;
+}
+
+.dealer-dots .active {
+  background: var(--accent);
+  opacity: 1;
+}
+
+.dealer-feature-strip {
+  background: var(--accent);
+  color: #fff;
+}
+
+.dealer-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+
+.dealer-feature-grid article span {
+  font-size: 1.8rem;
+  opacity: 0.7;
+}
+
+.dealer-feature-grid h4 {
+  margin: 0.2rem 0;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.5rem);
+}
+
+.dealer-feature-grid p {
+  margin: 0;
+  font-size: clamp(0.9rem, 0.25vw + 0.8rem, 1.1rem);
+}
+
+.dealer-service-tabs-wrap {
+  background: #efefef;
+}
+
+.dealer-service-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.dealer-service-tabs article {
+  min-height: 188px;
+  border-right: 1px solid #d0d0d2;
+  border-left: 1px solid #d0d0d2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+.dealer-service-tabs article.active {
+  background: #e3e3e5;
+  border-bottom: 4px solid var(--accent);
+}
+
+.tab-icon {
+  width: 72px;
+  height: 72px;
+  border: 4px solid #d2d2d4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.dealer-service-tabs article.active .tab-icon {
+  border-color: var(--accent);
+}
+
+@media (max-width: 1199.98px) {
+  .hero-dealer-content {grid-template-columns: 1fr; padding-top: 4rem;}
+  .dealer-feature-grid {grid-template-columns: 1fr 1fr;}
+  .dealer-service-tabs {grid-template-columns: repeat(3, 1fr);}
+}
+
+@media (max-width: 767.98px) {
+  .dealer-panel-top {grid-template-columns: 1fr;}
+  .sell-box {border-right: none; border-bottom: 3px solid var(--accent);}
+  .dealer-feature-grid {grid-template-columns: 1fr;}
+  .dealer-service-tabs {grid-template-columns: 1fr 1fr;}
+}
