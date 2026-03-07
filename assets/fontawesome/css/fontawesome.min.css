@@ -1,0 +1,12 @@
+/*
+ * Minimal local subset inspired by Font Awesome Free 6 (for offline repository usage).
+ * Provides base FA utility classes used in this project.
+ */
+.fa-solid,
+.fa {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
