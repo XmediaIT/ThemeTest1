@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Source+Sans+Pro:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;600&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css" />
@@ -511,6 +511,33 @@
       </div>
       <label class="theme-custom-label" for="customThemeColor">Custom</label>
       <input id="customThemeColor" class="theme-color-input" type="color" value="#ff5f3d" aria-label="Pick custom theme color" />
+
+      <div class="theme-field mt-2">
+        <label for="headingFontSelect">Heading Font</label>
+        <select id="headingFontSelect" class="theme-select">
+          <option value="josefin">Josefin Sans</option>
+          <option value="montserrat">Montserrat</option>
+          <option value="poppins">Poppins</option>
+          <option value="roboto">Roboto</option>
+          <option value="playfair">Playfair Display</option>
+        </select>
+      </div>
+
+      <div class="theme-field">
+        <label for="bodyFontSelect">Body Font</label>
+        <select id="bodyFontSelect" class="theme-select">
+          <option value="sourceSans">Source Sans Pro</option>
+          <option value="roboto">Roboto</option>
+          <option value="lato">Lato</option>
+          <option value="poppins">Poppins</option>
+          <option value="merriweather">Merriweather</option>
+        </select>
+      </div>
+
+      <div class="theme-field">
+        <label for="fontSizeRange">Base Size</label>
+        <input id="fontSizeRange" class="theme-range" type="range" min="14" max="20" step="1" value="16" />
+      </div>
     </aside>
 
     <footer class="site-footer">
@@ -560,12 +587,35 @@
     <script>
       (() => {
         const root = document.body;
+        const docRoot = document.documentElement;
         const buttons = document.querySelectorAll('.theme-btn');
         const colorInput = document.getElementById('customThemeColor');
+        const headingSelect = document.getElementById('headingFontSelect');
+        const bodySelect = document.getElementById('bodyFontSelect');
+        const sizeRange = document.getElementById('fontSizeRange');
+
         const key = 'theme-choice';
         const customKey = 'theme-custom-color';
+        const headingKey = 'theme-heading-font';
+        const bodyKey = 'theme-body-font';
+        const sizeKey = 'theme-base-size';
+
         const saved = localStorage.getItem(key);
         const savedCustom = localStorage.getItem(customKey);
+        const savedHeading = localStorage.getItem(headingKey) || 'josefin';
+        const savedBody = localStorage.getItem(bodyKey) || 'sourceSans';
+        const savedSize = localStorage.getItem(sizeKey) || '16';
+
+        const fontMap = {
+          josefin: '"Josefin Sans", sans-serif',
+          montserrat: '"Montserrat", sans-serif',
+          poppins: '"Poppins", sans-serif',
+          roboto: '"Roboto", sans-serif',
+          playfair: '"Playfair Display", serif',
+          sourceSans: '"Source Sans Pro", sans-serif',
+          lato: '"Lato", sans-serif',
+          merriweather: '"Merriweather", serif'
+        };
 
         const apply = (value) => {
           root.classList.remove('theme-blue', 'theme-green', 'theme-purple', 'theme-custom');
@@ -574,12 +624,28 @@
           }
         };
 
+        const applyFonts = (heading, body) => {
+          docRoot.style.setProperty('--font-heading', fontMap[heading] || fontMap.josefin);
+          docRoot.style.setProperty('--font-body', fontMap[body] || fontMap.sourceSans);
+        };
+
+        const applySize = (size) => {
+          const px = Number(size) || 16;
+          docRoot.style.setProperty('--base-font-size', `${px}px`);
+        };
+
         if (savedCustom && colorInput) {
           colorInput.value = savedCustom;
-          document.documentElement.style.setProperty('--accent-custom', savedCustom);
+          docRoot.style.setProperty('--accent-custom', savedCustom);
         }
 
+        if (headingSelect) headingSelect.value = savedHeading;
+        if (bodySelect) bodySelect.value = savedBody;
+        if (sizeRange) sizeRange.value = savedSize;
+
         apply(saved || 'default');
+        applyFonts(savedHeading, savedBody);
+        applySize(savedSize);
 
         buttons.forEach((btn) => {
           btn.addEventListener('click', () => {
@@ -592,10 +658,31 @@
         if (colorInput) {
           colorInput.addEventListener('input', () => {
             const color = colorInput.value;
-            document.documentElement.style.setProperty('--accent-custom', color);
+            docRoot.style.setProperty('--accent-custom', color);
             apply('custom');
             localStorage.setItem(key, 'custom');
             localStorage.setItem(customKey, color);
+          });
+        }
+
+        if (headingSelect) {
+          headingSelect.addEventListener('change', () => {
+            applyFonts(headingSelect.value, bodySelect ? bodySelect.value : 'sourceSans');
+            localStorage.setItem(headingKey, headingSelect.value);
+          });
+        }
+
+        if (bodySelect) {
+          bodySelect.addEventListener('change', () => {
+            applyFonts(headingSelect ? headingSelect.value : 'josefin', bodySelect.value);
+            localStorage.setItem(bodyKey, bodySelect.value);
+          });
+        }
+
+        if (sizeRange) {
+          sizeRange.addEventListener('input', () => {
+            applySize(sizeRange.value);
+            localStorage.setItem(sizeKey, sizeRange.value);
           });
         }
       })();
