@@ -509,6 +509,8 @@
         <button class="theme-btn" type="button" data-theme="green" aria-label="Green theme"></button>
         <button class="theme-btn" type="button" data-theme="purple" aria-label="Purple theme"></button>
       </div>
+      <label class="theme-custom-label" for="customThemeColor">Custom</label>
+      <input id="customThemeColor" class="theme-color-input" type="color" value="#ff5f3d" aria-label="Pick custom theme color" />
     </aside>
 
     <footer class="site-footer">
@@ -559,15 +561,23 @@
       (() => {
         const root = document.body;
         const buttons = document.querySelectorAll('.theme-btn');
+        const colorInput = document.getElementById('customThemeColor');
         const key = 'theme-choice';
+        const customKey = 'theme-custom-color';
         const saved = localStorage.getItem(key);
+        const savedCustom = localStorage.getItem(customKey);
 
         const apply = (value) => {
-          root.classList.remove('theme-blue', 'theme-green', 'theme-purple');
+          root.classList.remove('theme-blue', 'theme-green', 'theme-purple', 'theme-custom');
           if (value && value !== 'default') {
             root.classList.add(`theme-${value}`);
           }
         };
+
+        if (savedCustom && colorInput) {
+          colorInput.value = savedCustom;
+          document.documentElement.style.setProperty('--accent-custom', savedCustom);
+        }
 
         apply(saved || 'default');
 
@@ -578,6 +588,16 @@
             localStorage.setItem(key, theme);
           });
         });
+
+        if (colorInput) {
+          colorInput.addEventListener('input', () => {
+            const color = colorInput.value;
+            document.documentElement.style.setProperty('--accent-custom', color);
+            apply('custom');
+            localStorage.setItem(key, 'custom');
+            localStorage.setItem(customKey, color);
+          });
+        }
       })();
     </script>
 
