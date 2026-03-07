@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  font-family: "Arial", "Helvetica", sans-serif;
+  font-family: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
   background-color: var(--page-bg);
   color: var(--title-dark);
 }
@@ -19,6 +19,7 @@ body {
 }
 
 .section-title {
+  font-family: "Josefin Sans", sans-serif;
   font-size: clamp(1.8rem, 1.8vw + 0.75rem, 2.65rem);
   font-weight: 700;
   text-transform: uppercase;
@@ -77,21 +78,24 @@ body {
 
 .card-subtitle {
   margin: 0;
+  font-family: "Josefin Sans", sans-serif;
   font-size: clamp(1.05rem, 0.95vw + 0.75rem, 2.1rem);
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
 .card-title {
   margin: 0;
+  font-family: "Josefin Sans", sans-serif;
   color: var(--accent);
   font-size: clamp(1.8rem, 1.9vw + 1rem, 4.45rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.06;
   text-transform: uppercase;
 }
 
 .card-description {
+  font-family: "Source Sans Pro", sans-serif;
   color: var(--body-text);
   font-size: clamp(1rem, 0.3vw + 0.9rem, 1.25rem);
   line-height: 1.35;
