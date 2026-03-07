@@ -14,10 +14,6 @@ body {
   color: var(--title-dark);
 }
 
-.customer-service {
-  min-height: 100vh;
-}
-
 .section-title {
   font-family: "Josefin Sans", sans-serif;
   font-size: clamp(1.8rem, 1.8vw + 0.75rem, 2.65rem);
@@ -670,5 +666,258 @@ body {
   .dream-btn {
     width: 100%;
     min-width: unset;
+  }
+}
+
+
+.site-header {
+  background: #ececec;
+  border-bottom: 1px solid #d8d8da;
+}
+
+.header-inner {
+  min-height: 116px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  gap: 0.75rem;
+  padding-right: 2rem;
+  border-right: 4px solid #dbdbdd;
+}
+
+.brand-mark,
+.footer-brand {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 0.75;
+  color: var(--accent);
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.brand-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.brand-subtitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  color: #2a2c30;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.75rem;
+  color: #1f2125;
+}
+
+.main-nav .nav-contact {
+  padding: 0.8rem 1.1rem;
+  background: var(--accent);
+  color: #fff;
+}
+
+.header-tools {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.tool-box {
+  width: 56px;
+  height: 56px;
+  border: 4px solid #d4d4d6;
+  color: #b1b1b3;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.tool-user {
+  color: var(--accent);
+}
+
+.site-content {
+  overflow: hidden;
+}
+
+.site-footer {
+  background: #181a1f;
+  color: #fff;
+}
+
+.footer-top {
+  border-top: 1px solid #2e3137;
+  border-bottom: 1px solid #2e3137;
+}
+
+.footer-top-inner {
+  min-height: 126px;
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 0.5fr;
+  align-items: center;
+}
+
+.footer-brand {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-nav {
+  border-left: 1px solid #34373d;
+  border-right: 1px solid #34373d;
+  min-height: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  color: #f6f6f7;
+  font-size: 1.8rem;
+}
+
+.footer-nav .footer-active,
+.footer-social p {
+  color: var(--accent);
+}
+
+.footer-social {
+  padding-left: 2.5rem;
+}
+
+.footer-social p {
+  margin: 0 0 0.6rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.15rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-links a {
+  color: #9b9ca0;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  background: #24272d;
+}
+
+.footer-bottom-inner {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+.copyright {
+  color: #8f9094;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1399.98px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .brand {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .footer-top-inner {
+    grid-template-columns: 1fr;
+    padding: 1.4rem 0;
+    row-gap: 1rem;
+  }
+
+  .footer-nav {
+    border: none;
+    min-height: 0;
+  }
+
+  .footer-social {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .main-nav {
+    gap: 0.9rem;
+  }
+
+  .main-nav a {
+    font-size: 1.2rem;
+  }
+
+  .brand-title {
+    font-size: 2.1rem;
+  }
+
+  .brand-mark,
+  .footer-brand {
+    font-size: 3.2rem;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0;
   }
 }
