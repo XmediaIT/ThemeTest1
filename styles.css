@@ -921,3 +921,136 @@ body {
     padding: 1rem 0;
   }
 }
+
+/* Layout & header/footer refinements */
+:root {
+  --page-bg: #ffffff;
+}
+
+body {
+  background-color: var(--page-bg);
+}
+
+.layout-1600 {
+  width: min(100%, 1600px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .layout-1600 {
+    padding-inline: 1.5rem;
+  }
+}
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e3e3e5;
+  z-index: 1050;
+}
+
+.header-navbar {
+  min-height: 112px;
+}
+
+.header-toggler {
+  border: 2px solid #d8d8da;
+  border-radius: 0;
+  padding: 0.4rem 0.55rem;
+}
+
+.header-toggler .navbar-toggler-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.brand {
+  border-right: 4px solid #dbdbdd;
+  padding-right: 1.75rem;
+}
+
+.main-nav .nav-link {
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  color: #1f2125;
+  font-size: 1.45rem;
+  padding-inline: 0.9rem;
+}
+
+.main-nav .dropdown-menu {
+  border-radius: 0;
+  border: 1px solid #d8d8da;
+}
+
+.main-nav .dropdown-item {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+
+.main-nav .nav-contact {
+  background: var(--accent);
+  color: #fff;
+  padding-inline: 1.2rem;
+  margin-left: 0.4rem;
+}
+
+.main-nav .nav-contact:hover,
+.main-nav .nav-contact:focus-visible {
+  color: #fff;
+}
+
+.header-tools {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.site-content section,
+.site-footer .layout-1600 {
+  width: 100%;
+}
+
+.premium-wrap,
+.dream-grid {
+  max-width: 100%;
+}
+
+@media (max-width: 1399.98px) {
+  .brand {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .header-navbar {
+    min-height: 96px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .header-navbar {
+    align-items: center;
+    padding: 0.9rem 0;
+  }
+
+  .navbar-collapse {
+    background: #fff;
+    margin-top: 0.75rem;
+    border: 1px solid #e3e3e5;
+    padding: 0.8rem;
+  }
+
+  .main-nav .nav-link {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .main-nav .nav-contact {
+    display: inline-block;
+    margin: 0.5rem 0 0;
+    padding-inline: 0.9rem;
+  }
+
+  .header-tools {
+    margin-top: 0.75rem;
+  }
+}
