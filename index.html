@@ -500,6 +500,17 @@
     </section>
     </main>
 
+
+    <aside class="theme-switcher" aria-label="Style switcher">
+      <p class="theme-switcher-title">Theme</p>
+      <div class="theme-switcher-buttons">
+        <button class="theme-btn" type="button" data-theme="default" aria-label="Default orange theme"></button>
+        <button class="theme-btn" type="button" data-theme="blue" aria-label="Blue theme"></button>
+        <button class="theme-btn" type="button" data-theme="green" aria-label="Green theme"></button>
+        <button class="theme-btn" type="button" data-theme="purple" aria-label="Purple theme"></button>
+      </div>
+    </aside>
+
     <footer class="site-footer">
       <div class="footer-top">
         <div class="layout-1600">
@@ -542,6 +553,33 @@
         </div>
       </div>
     </footer>
+
+
+    <script>
+      (() => {
+        const root = document.body;
+        const buttons = document.querySelectorAll('.theme-btn');
+        const key = 'theme-choice';
+        const saved = localStorage.getItem(key);
+
+        const apply = (value) => {
+          root.classList.remove('theme-blue', 'theme-green', 'theme-purple');
+          if (value && value !== 'default') {
+            root.classList.add(`theme-${value}`);
+          }
+        };
+
+        apply(saved || 'default');
+
+        buttons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const theme = btn.dataset.theme || 'default';
+            apply(theme);
+            localStorage.setItem(key, theme);
+          });
+        });
+      })();
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
