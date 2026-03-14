@@ -42,10 +42,9 @@
 }
 
 .featured-showcases-slider {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: clamp(0.8rem, 1.2vw, 1.2rem);
+  position: relative;
+  padding-inline: clamp(2.75rem, 5vw, 4.3rem);
+  padding-bottom: 2.15rem;
 }
 
 .featured-showcases-track {
@@ -92,6 +91,9 @@
 }
 
 .featured-showcases-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-52%);
   width: clamp(2.35rem, 2vw + 1.75rem, 2.95rem);
   height: clamp(2.35rem, 2vw + 1.75rem, 2.95rem);
   border: 1px solid rgba(255, 95, 61, 0.5);
@@ -102,24 +104,45 @@
   justify-content: center;
   font-size: 1.05rem;
   line-height: 1;
-  cursor: default;
+  opacity: 1;
+}
+
+.featured-showcases-arrow:hover,
+.featured-showcases-arrow:focus-visible {
+  background: rgba(255, 95, 61, 0.2);
+  color: var(--accent);
+}
+
+.featured-showcases-arrow-left {
+  left: 0;
+}
+
+.featured-showcases-arrow-right {
+  right: 0;
 }
 
 .featured-showcases-dots {
-  margin-top: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   gap: 0.45rem;
 }
 
-.featured-showcases-dots span {
+.featured-showcases-dots [data-bs-target] {
   width: 8px;
   height: 8px;
+  border: 0;
   border-radius: 50%;
+  margin: 0;
   background: rgba(30, 33, 38, 0.24);
+  opacity: 1;
 }
 
-.featured-showcases-dots .is-active {
+.featured-showcases-dots .active {
   width: 10px;
   height: 10px;
   background: var(--accent);
@@ -137,10 +160,33 @@
   background-image: url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80");
 }
 
+.featured-showcase-media-grand-tourer {
+  background-image: url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80");
+}
+
+.featured-showcase-media-track {
+  background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80");
+}
+
+.featured-showcase-media-hybrid {
+  background-image: url("https://images.unsplash.com/photo-1563720360172-67b8f3dce741?auto=format&fit=crop&w=1200&q=80");
+}
+
+.featured-showcase-media-classic {
+  background-image: url("https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1200&q=80");
+}
+
+.featured-showcase-media-supercar {
+  background-image: url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80");
+}
+
+.featured-showcase-media-ev-performance {
+  background-image: url("https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80");
+}
+
 @media (max-width: 1199.98px) {
   .featured-showcases-slider {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.9rem;
+    padding-inline: 0;
   }
 
   .featured-showcases-track {

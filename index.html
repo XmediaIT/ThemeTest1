@@ -419,43 +419,96 @@
           </p>
         </div>
 
-        <div class="featured-showcases-slider" aria-label="Featured automotive showcases">
-          <button class="featured-showcases-arrow featured-showcases-arrow-left" type="button" aria-label="Previous showcase">
-            <span aria-hidden="true">&#10094;</span>
-          </button>
+        <div id="featuredShowcasesCarousel" class="featured-showcases-slider carousel slide" data-bs-ride="carousel" data-bs-interval="5500" aria-label="Featured automotive showcases">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="featured-showcases-track">
+                <article class="featured-showcase-card">
+                  <div class="featured-showcase-media featured-showcase-media-sedan" role="img" aria-label="Luxury sedan parked in a modern urban setting"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Luxury Sedan</h3>
+                  </div>
+                </article>
 
-          <div class="featured-showcases-track">
-            <article class="featured-showcase-card">
-              <div class="featured-showcase-media featured-showcase-media-sedan" role="img" aria-label="Luxury sedan parked in a modern urban setting"></div>
-              <div class="featured-showcase-content">
-                <h3 class="featured-showcase-title">Luxury Sedan</h3>
-              </div>
-            </article>
+                <article class="featured-showcase-card featured-showcase-card-active">
+                  <div class="featured-showcase-media featured-showcase-media-coupe" role="img" aria-label="Performance coupe on a winding road"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Performance Coupe</h3>
+                  </div>
+                </article>
 
-            <article class="featured-showcase-card featured-showcase-card-active">
-              <div class="featured-showcase-media featured-showcase-media-coupe" role="img" aria-label="Performance coupe on a winding road"></div>
-              <div class="featured-showcase-content">
-                <h3 class="featured-showcase-title">Performance Coupe</h3>
+                <article class="featured-showcase-card">
+                  <div class="featured-showcase-media featured-showcase-media-electric" role="img" aria-label="Electric SUV charging near a contemporary building"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Electric SUV</h3>
+                  </div>
+                </article>
               </div>
-            </article>
+            </div>
 
-            <article class="featured-showcase-card">
-              <div class="featured-showcase-media featured-showcase-media-electric" role="img" aria-label="Electric SUV charging near a contemporary building"></div>
-              <div class="featured-showcase-content">
-                <h3 class="featured-showcase-title">Electric SUV</h3>
+            <div class="carousel-item">
+              <div class="featured-showcases-track">
+                <article class="featured-showcase-card">
+                  <div class="featured-showcase-media featured-showcase-media-grand-tourer" role="img" aria-label="Grand tourer parked near a coastal road"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Grand Tourer</h3>
+                  </div>
+                </article>
+
+                <article class="featured-showcase-card featured-showcase-card-active">
+                  <div class="featured-showcase-media featured-showcase-media-track" role="img" aria-label="Track-ready sports car on circuit"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Track Edition</h3>
+                  </div>
+                </article>
+
+                <article class="featured-showcase-card">
+                  <div class="featured-showcase-media featured-showcase-media-hybrid" role="img" aria-label="Hybrid crossover in a city environment"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Hybrid Crossover</h3>
+                  </div>
+                </article>
               </div>
-            </article>
+            </div>
+
+            <div class="carousel-item">
+              <div class="featured-showcases-track">
+                <article class="featured-showcase-card">
+                  <div class="featured-showcase-media featured-showcase-media-classic" role="img" aria-label="Classic coupe in editorial studio lighting"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Classic Revival</h3>
+                  </div>
+                </article>
+
+                <article class="featured-showcase-card featured-showcase-card-active">
+                  <div class="featured-showcase-media featured-showcase-media-supercar" role="img" aria-label="Modern supercar in motion"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">Supercar Spotlight</h3>
+                  </div>
+                </article>
+
+                <article class="featured-showcase-card">
+                  <div class="featured-showcase-media featured-showcase-media-ev-performance" role="img" aria-label="Electric performance SUV during sunset"></div>
+                  <div class="featured-showcase-content">
+                    <h3 class="featured-showcase-title">EV Performance</h3>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
 
-          <button class="featured-showcases-arrow featured-showcases-arrow-right" type="button" aria-label="Next showcase">
+          <button class="carousel-control-prev featured-showcases-arrow featured-showcases-arrow-left" type="button" data-bs-target="#featuredShowcasesCarousel" data-bs-slide="prev" aria-label="Previous showcases">
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+          <button class="carousel-control-next featured-showcases-arrow featured-showcases-arrow-right" type="button" data-bs-target="#featuredShowcasesCarousel" data-bs-slide="next" aria-label="Next showcases">
             <span aria-hidden="true">&#10095;</span>
           </button>
-        </div>
 
-        <div class="featured-showcases-dots" aria-hidden="true">
-          <span></span>
-          <span class="is-active"></span>
-          <span></span>
+          <div class="carousel-indicators featured-showcases-dots">
+            <button type="button" data-bs-target="#featuredShowcasesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Showcase group 1"></button>
+            <button type="button" data-bs-target="#featuredShowcasesCarousel" data-bs-slide-to="1" aria-label="Showcase group 2"></button>
+            <button type="button" data-bs-target="#featuredShowcasesCarousel" data-bs-slide-to="2" aria-label="Showcase group 3"></button>
+          </div>
         </div>
       </div>
     </section>
